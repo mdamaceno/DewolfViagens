@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="DewolfModel" namespace="Dewolf.Model" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="DewolfModel" backend="mysql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="Dewolf.Model" default="true">
+      <orm:class name="Viagem" uniqueId="2a922632-1b8f-43cb-a4dd-decd67e14e3d">
+        <orm:table name="viagem" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Idviagem" />
+          </orm:key-generator>
+          <orm:single-field field-name="_idviagem" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_idviagem" property="Idviagem" behavior="readwrite" uniqueId="397ae2a8-ae99-44e6-acd1-0e750541db89" type="System.Int32">
+          <orm:column name="idviagem" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_origem" property="Origem" behavior="readwrite" uniqueId="b548e4c9-a1fa-4d21-b02a-207215599600" type="System.String">
+          <orm:column name="origem" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_destino" property="Destino" behavior="readwrite" uniqueId="615110b2-8167-4fd7-bfb3-bd6afa14642f" type="System.String">
+          <orm:column name="destino" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_distancia" property="Distancia" behavior="readwrite" uniqueId="d6ce4341-e2d9-4567-9198-42905f7b5271" type="System.Int32">
+          <orm:column name="distancia" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_dataHorario" property="DataHorario" behavior="readwrite" uniqueId="9837ec2c-8630-4b21-8615-bb4d011b8a37" type="System.DateTime">
+          <orm:column name="dataHorario" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_motorista" property="Motorista" behavior="readwrite" uniqueId="02952419-48aa-4515-97ab-25781f6d099c" type="System.String">
+          <orm:column name="motorista" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_qtdePedagio" property="QtdePedagio" behavior="readwrite" uniqueId="afc52f33-816f-408a-8853-b6676c012241" type="System.Int32">
+          <orm:column name="qtdePedagio" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_vrUnitarioPedagio" property="VrUnitarioPedagio" behavior="readwrite" uniqueId="50b7a2b2-f336-4012-ba7a-dfe4fe85b8f4" type="System.Decimal">
+          <orm:column name="vrUnitarioPedagio" sql-type="decimal" nullable="false" length="15" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_vrUnitarioKM" property="VrUnitarioKM" behavior="readwrite" uniqueId="121d57d9-1b1b-4bac-8c98-e65b40bb5cf5" type="System.Decimal">
+          <orm:column name="vrUnitarioKM" sql-type="decimal" nullable="false" length="15" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_qtdeLugares" property="QtdeLugares" behavior="readwrite" uniqueId="a16e68c5-b5c6-40c4-95cb-9e8eade2a0ee" type="System.Int32">
+          <orm:column name="qtdeLugares" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_passagems" property="Passagems" behavior="readwrite" uniqueId="ea573c66-602f-4ce1-8a3d-2276f007957a" type="Dewolf.Model.Passagem">
+          <orm:collection element-class="Dewolf.Model.Passagem" inverse-field="_viagem1" order-by="" uniqueId="86695151-5bb3-424e-a5c0-e32b65843d7b" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Passagem" uniqueId="17c51e47-2232-4a23-861a-e4684708981d">
+        <orm:table name="passagem" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Idpassagem" />
+          </orm:key-generator>
+          <orm:single-field field-name="_idpassagem" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_idpassagem" property="Idpassagem" behavior="readwrite" uniqueId="16b4d59c-bdc9-4537-ae09-915b23398ee8" type="System.Int32">
+          <orm:column name="idpassagem" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_viagem" property="Viagem" behavior="readwrite" uniqueId="828762fd-6388-4c8d-99bc-cb586a24fd2f" type="System.Int32">
+          <orm:column name="viagem" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_passageiro" property="Passageiro" behavior="readwrite" uniqueId="150f36f7-7341-48ab-a42d-176bbb5f5caf" type="System.Int32">
+          <orm:column name="passageiro" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_numPoltrona" property="NumPoltrona" behavior="readwrite" uniqueId="dc670c9f-8b6a-433a-a87f-ceb378cf184f" type="System.Int32">
+          <orm:column name="numPoltrona" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_vrDistancia" property="VrDistancia" behavior="readwrite" uniqueId="2fdd3a2d-2915-4d8b-9796-d6b1602cc7dd" type="System.Decimal">
+          <orm:column name="vrDistancia" sql-type="decimal" nullable="false" length="15" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_vrPedagio" property="VrPedagio" behavior="readwrite" uniqueId="5e9add64-57fb-4370-b104-280ed5102528" type="System.Decimal">
+          <orm:column name="vrPedagio" sql-type="decimal" nullable="false" length="15" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_vrTotal" property="VrTotal" behavior="readwrite" uniqueId="7e70e669-93d2-44c2-95b3-8dd68e513c1f" type="System.Decimal">
+          <orm:column name="vrTotal" sql-type="decimal" nullable="false" length="15" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_passageiro1" property="Passageiro1" behavior="readwrite" uniqueId="d6d305ac-fc75-4f94-a6e4-058f4e195797" type="Dewolf.Model.Passageiro">
+          <orm:reference uniqueId="37131d3d-1da2-43da-83f9-b251093743de" association-name="PassagemHasPassageiro">
+            <orm:sharedfield name="_passageiro" target-class="Dewolf.Model.Passageiro" target-field="_idpassageiro" />
+            <orm:constraint name="fk_passageiro" delete-action="cascade" destination-table="passageiro" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_viagem1" property="Viagem1" behavior="readwrite" uniqueId="58147243-861e-449c-8e39-2fde2d6c0a68" type="Dewolf.Model.Viagem">
+          <orm:reference uniqueId="86695151-5bb3-424e-a5c0-e32b65843d7b" association-name="PassagemHasViagem">
+            <orm:sharedfield name="_viagem" target-class="Dewolf.Model.Viagem" target-field="_idviagem" />
+            <orm:constraint name="fk_viagem" delete-action="cascade" destination-table="viagem" />
+          </orm:reference>
+        </orm:field>
+        <orm:index name="fk_passageiro_idx">
+          <orm:columnMapping>
+            <orm:column name="passageiro" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="pk_viagem_idx">
+          <orm:columnMapping>
+            <orm:column name="viagem" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+      <orm:class name="Passageiro" uniqueId="f1f4d0a7-5fc8-44c2-a6d7-c1c9fcccabe5">
+        <orm:table name="passageiro" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Idpassageiro" />
+          </orm:key-generator>
+          <orm:single-field field-name="_idpassageiro" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_idpassageiro" property="Idpassageiro" behavior="readwrite" uniqueId="cf92ddb8-639c-49d6-a319-2800cd157e4d" type="System.Int32">
+          <orm:column name="idpassageiro" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_nome" property="Nome" behavior="readwrite" uniqueId="868821f2-2825-45a1-8280-3a25624eb046" type="System.String">
+          <orm:column name="nome" sql-type="nvarchar" nullable="false" length="60" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_idade" property="Idade" behavior="readwrite" uniqueId="7793f11d-ce0d-4870-8cb5-0600ef745539" type="System.Int32">
+          <orm:column name="idade" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_cpf" property="Cpf" behavior="readwrite" uniqueId="9bd62a63-23ee-4901-a0a8-80c8ceae8d13" type="System.String">
+          <orm:column name="cpf" sql-type="nvarchar" nullable="false" length="14" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_rg" property="Rg" behavior="readwrite" uniqueId="77ba05b6-a334-42e0-a59e-08004de80f4b" type="System.String">
+          <orm:column name="rg" sql-type="nvarchar" nullable="false" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_autorizacao" property="Autorizacao" behavior="readwrite" uniqueId="22fbc87b-289c-4cee-87c4-119540d7feec" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="autorizacao" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_passagems" property="Passagems" behavior="readwrite" uniqueId="9fbb1aa6-b4c3-4b3c-8be6-182f10e2494b" type="Dewolf.Model.Passagem">
+          <orm:collection element-class="Dewolf.Model.Passagem" inverse-field="_passageiro1" order-by="" uniqueId="37131d3d-1da2-43da-83f9-b251093743de" />
+        </orm:field>
+        <orm:field name="_autorizacao1" property="Autorizacao1" behavior="readwrite" uniqueId="21e218f4-dcb0-4ac1-a3ea-40a30f34febf" type="Dewolf.Model.Autorizacao">
+          <orm:reference uniqueId="c653536f-7a93-468b-ba83-c31f677c8649" association-name="PassageiroHasAutorizacao">
+            <orm:sharedfield name="_autorizacao" target-class="Dewolf.Model.Autorizacao" target-field="_idautorizacao" />
+            <orm:constraint name="fk_autorizacao" delete-action="cascade" destination-table="autorizacao" />
+          </orm:reference>
+        </orm:field>
+        <orm:index name="fk_autorizacao_idx">
+          <orm:columnMapping>
+            <orm:column name="autorizacao" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+      <orm:class name="Autorizacao" uniqueId="77c65e66-3d17-451c-9b28-0eaaef24b8bd">
+        <orm:table name="autorizacao" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Idautorizacao" />
+          </orm:key-generator>
+          <orm:single-field field-name="_idautorizacao" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_idautorizacao" property="Idautorizacao" behavior="readwrite" uniqueId="30c0870d-3c39-465c-b1d0-5ef3c57f3239" type="System.Int32">
+          <orm:column name="idautorizacao" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_nomeResponsavel" property="NomeResponsavel" behavior="readwrite" uniqueId="5ab7c8b7-161c-40ce-97bc-14fec016e04f" type="System.String">
+          <orm:column name="nomeResponsavel" sql-type="nvarchar" nullable="false" length="60" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_data" property="Data" behavior="readwrite" uniqueId="fed1f1af-299a-475c-aee3-ab8f3aac173a" type="System.DateTime">
+          <orm:column name="data" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_numDocResponsavel" property="NumDocResponsavel" behavior="readwrite" uniqueId="d1cae883-3ed0-40b1-8431-d16062c9bff3" type="System.String">
+          <orm:column name="numDocResponsavel" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_telefoneContato" property="TelefoneContato" behavior="readwrite" uniqueId="991e0bbe-5688-4b85-9627-0d25560c1346" type="System.String">
+          <orm:column name="telefoneContato" sql-type="nvarchar" nullable="false" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_passageiros" property="Passageiros" behavior="readwrite" uniqueId="5f00992c-08fa-4d04-b4cd-2d0781676613" type="Dewolf.Model.Passageiro">
+          <orm:collection element-class="Dewolf.Model.Passageiro" inverse-field="_autorizacao1" order-by="" uniqueId="c653536f-7a93-468b-ba83-c31f677c8649" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="viagem">
+        <orm:column name="idviagem" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="origem" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="destino" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="distancia" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="dataHorario" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="motorista" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="qtdePedagio" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="vrUnitarioPedagio" sql-type="decimal" nullable="false" length="15" scale="2" ado-type="Decimal" />
+        <orm:column name="vrUnitarioKM" sql-type="decimal" nullable="false" length="15" scale="2" ado-type="Decimal" />
+        <orm:column name="qtdeLugares" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="passagem">
+        <orm:column name="idpassagem" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="viagem" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="passageiro" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="numPoltrona" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="vrDistancia" sql-type="decimal" nullable="false" length="15" scale="2" ado-type="Decimal" />
+        <orm:column name="vrPedagio" sql-type="decimal" nullable="false" length="15" scale="2" ado-type="Decimal" />
+        <orm:column name="vrTotal" sql-type="decimal" nullable="false" length="15" scale="2" ado-type="Decimal" />
+        <orm:index name="fk_passageiro_idx">
+          <orm:columnMapping>
+            <orm:column name="passageiro" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="pk_viagem_idx">
+          <orm:columnMapping>
+            <orm:column name="viagem" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:constraint name="fk_passageiro" delete-action="cascade" destination-table="passageiro">
+          <orm:column name="passageiro" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+        <orm:constraint name="fk_viagem" delete-action="cascade" destination-table="viagem">
+          <orm:column name="viagem" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="passageiro">
+        <orm:column name="idpassageiro" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="nome" sql-type="nvarchar" nullable="false" length="60" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="idade" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="cpf" sql-type="nvarchar" nullable="false" length="14" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="rg" sql-type="nvarchar" nullable="false" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="autorizacao" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:index name="fk_autorizacao_idx">
+          <orm:columnMapping>
+            <orm:column name="autorizacao" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:constraint name="fk_autorizacao" delete-action="cascade" destination-table="autorizacao">
+          <orm:column name="autorizacao" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="autorizacao">
+        <orm:column name="idautorizacao" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="nomeResponsavel" sql-type="nvarchar" nullable="false" length="60" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="data" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="numDocResponsavel" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="telefoneContato" sql-type="nvarchar" nullable="false" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>Connection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>server=localhost;database=dewolfViagens;user id=root;password=</AppConfigConnectionString>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MySql</Backend>
+        <ProviderName>MySql.Data.MySqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="2a922632-1b8f-43cb-a4dd-decd67e14e3d" name="Viagem" namespace="Dewolf.Model" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Idviagem">
+      <Property Id="397ae2a8-ae99-44e6-acd1-0e750541db89" name="Idviagem" type="Int32" label="Idviagem : Int32" kind="Persistent" identity="true" fieldName="_idviagem" />
+      <Property Id="9837ec2c-8630-4b21-8615-bb4d011b8a37" name="DataHorario" type="DateTime" label="DataHorario : DateTime" kind="Persistent" fieldName="_dataHorario" />
+      <Property Id="615110b2-8167-4fd7-bfb3-bd6afa14642f" name="Destino" label="Destino : String" kind="Persistent" fieldName="_destino" />
+      <Property Id="d6ce4341-e2d9-4567-9198-42905f7b5271" name="Distancia" type="Int32" label="Distancia : Int32" kind="Persistent" fieldName="_distancia" />
+      <Property Id="02952419-48aa-4515-97ab-25781f6d099c" name="Motorista" label="Motorista : String" kind="Persistent" fieldName="_motorista" />
+      <Property Id="b548e4c9-a1fa-4d21-b02a-207215599600" name="Origem" label="Origem : String" kind="Persistent" fieldName="_origem" />
+      <Property Id="a16e68c5-b5c6-40c4-95cb-9e8eade2a0ee" name="QtdeLugares" type="Int32" label="QtdeLugares : Int32" kind="Persistent" fieldName="_qtdeLugares" />
+      <Property Id="afc52f33-816f-408a-8853-b6676c012241" name="QtdePedagio" type="Int32" label="QtdePedagio : Int32" kind="Persistent" fieldName="_qtdePedagio" />
+      <Property Id="121d57d9-1b1b-4bac-8c98-e65b40bb5cf5" name="VrUnitarioKM" type="Decimal" label="VrUnitarioKM : Decimal" kind="Persistent" fieldName="_vrUnitarioKM" />
+      <Property Id="50b7a2b2-f336-4012-ba7a-dfe4fe85b8f4" name="VrUnitarioPedagio" type="Decimal" label="VrUnitarioPedagio : Decimal" kind="Persistent" fieldName="_vrUnitarioPedagio" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="a13199cd-e773-4c6a-857e-fb1b1484c481">
+          <NavigationalProperty Id="ea573c66-602f-4ce1-8a3d-2276f007957a" name="Passagems" type="IList&lt;Passagem&gt;" label="Passagems : IList&lt;Passagem&gt;" nullable="true" kind="Persistent" fieldName="_passagems" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="17c51e47-2232-4a23-861a-e4684708981d" name="Passagem" namespace="Dewolf.Model" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Idpassagem">
+      <Property Id="16b4d59c-bdc9-4537-ae09-915b23398ee8" name="Idpassagem" type="Int32" label="Idpassagem : Int32" kind="Persistent" identity="true" fieldName="_idpassagem" />
+      <Property Id="dc670c9f-8b6a-433a-a87f-ceb378cf184f" name="NumPoltrona" type="Int32" label="NumPoltrona : Int32" kind="Persistent" fieldName="_numPoltrona" />
+      <Property Id="150f36f7-7341-48ab-a42d-176bbb5f5caf" name="Passageiro" type="Int32" label="Passageiro : Int32" kind="Persistent" fieldName="_passageiro" />
+      <Property Id="828762fd-6388-4c8d-99bc-cb586a24fd2f" name="Viagem" type="Int32" label="Viagem : Int32" kind="Persistent" fieldName="_viagem" />
+      <Property Id="2fdd3a2d-2915-4d8b-9796-d6b1602cc7dd" name="VrDistancia" type="Decimal" label="VrDistancia : Decimal" kind="Persistent" fieldName="_vrDistancia" />
+      <Property Id="5e9add64-57fb-4370-b104-280ed5102528" name="VrPedagio" type="Decimal" label="VrPedagio : Decimal" kind="Persistent" fieldName="_vrPedagio" />
+      <Property Id="7e70e669-93d2-44c2-95b3-8dd68e513c1f" name="VrTotal" type="Decimal" label="VrTotal : Decimal" kind="Persistent" fieldName="_vrTotal" />
+      <AssociationTargets>
+        <Association Id="37131d3d-1da2-43da-83f9-b251093743de" SourceMultiplicity="One" name="PassagemHasPassageiro">
+          <DomainClassMoniker name="/DewolfModel/Passageiro" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="8b74fcbb-1c3a-4346-b5fe-ed0ce4e31cf5">
+              <NavigationalPropertyMoniker name="/DewolfModel/Passageiro/Passagems" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="645879e0-57b2-4ce0-b2b0-122215244e08">
+              <NavigationalPropertyMoniker name="/DewolfModel/Passagem/Passageiro1" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="86695151-5bb3-424e-a5c0-e32b65843d7b" SourceMultiplicity="One" name="PassagemHasViagem">
+          <DomainClassMoniker name="/DewolfModel/Viagem" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="e2d7f1a9-6c5f-43ab-ac55-493446786523">
+              <NavigationalPropertyMoniker name="/DewolfModel/Viagem/Passagems" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="0fd4a7ff-3cfb-486a-8948-deee8fc1ebc6">
+              <NavigationalPropertyMoniker name="/DewolfModel/Passagem/Viagem1" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="fdf052c1-6217-42f1-be2f-d3f1880fbb85">
+          <NavigationalProperty Id="d6d305ac-fc75-4f94-a6e4-058f4e195797" name="Passageiro1" type="Passageiro" label="Passageiro1 : Passageiro" nullable="true" kind="Persistent" fieldName="_passageiro1" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="9cda4660-8de0-4bca-9d51-6bf0e27fd8b1">
+          <NavigationalProperty Id="58147243-861e-449c-8e39-2fde2d6c0a68" name="Viagem1" type="Viagem" label="Viagem1 : Viagem" nullable="true" kind="Persistent" fieldName="_viagem1" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="f1f4d0a7-5fc8-44c2-a6d7-c1c9fcccabe5" name="Passageiro" namespace="Dewolf.Model" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Idpassageiro">
+      <Property Id="cf92ddb8-639c-49d6-a319-2800cd157e4d" name="Idpassageiro" type="Int32" label="Idpassageiro : Int32" kind="Persistent" identity="true" fieldName="_idpassageiro" />
+      <Property Id="22fbc87b-289c-4cee-87c4-119540d7feec" name="Autorizacao" type="Int32" label="Autorizacao : Int32" nullable="true" kind="Persistent" fieldName="_autorizacao" />
+      <Property Id="9bd62a63-23ee-4901-a0a8-80c8ceae8d13" name="Cpf" label="Cpf : String" kind="Persistent" fieldName="_cpf" />
+      <Property Id="7793f11d-ce0d-4870-8cb5-0600ef745539" name="Idade" type="Int32" label="Idade : Int32" kind="Persistent" fieldName="_idade" />
+      <Property Id="868821f2-2825-45a1-8280-3a25624eb046" name="Nome" label="Nome : String" kind="Persistent" fieldName="_nome" />
+      <Property Id="77ba05b6-a334-42e0-a59e-08004de80f4b" name="Rg" label="Rg : String" kind="Persistent" fieldName="_rg" />
+      <AssociationTargets>
+        <Association Id="c653536f-7a93-468b-ba83-c31f677c8649" SourceMultiplicity="ZeroOne" name="PassageiroHasAutorizacao">
+          <DomainClassMoniker name="/DewolfModel/Autorizacao" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="4d4978b9-d344-42ba-a10e-7be9bcd6adc2">
+              <NavigationalPropertyMoniker name="/DewolfModel/Autorizacao/Passageiros" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="5418ef40-7447-4f33-939f-346eac01272b">
+              <NavigationalPropertyMoniker name="/DewolfModel/Passageiro/Autorizacao1" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="f2f4fa35-765e-420a-8025-b6151d506a77">
+          <NavigationalProperty Id="9fbb1aa6-b4c3-4b3c-8be6-182f10e2494b" name="Passagems" type="IList&lt;Passagem&gt;" label="Passagems : IList&lt;Passagem&gt;" nullable="true" kind="Persistent" fieldName="_passagems" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="a4e7fe8d-0f8f-4ac7-aaa8-a07c45fff73e">
+          <NavigationalProperty Id="21e218f4-dcb0-4ac1-a3ea-40a30f34febf" name="Autorizacao1" type="Autorizacao" label="Autorizacao1 : Autorizacao" nullable="true" kind="Persistent" fieldName="_autorizacao1" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="77c65e66-3d17-451c-9b28-0eaaef24b8bd" name="Autorizacao" namespace="Dewolf.Model" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Idautorizacao">
+      <Property Id="30c0870d-3c39-465c-b1d0-5ef3c57f3239" name="Idautorizacao" type="Int32" label="Idautorizacao : Int32" kind="Persistent" identity="true" fieldName="_idautorizacao" />
+      <Property Id="fed1f1af-299a-475c-aee3-ab8f3aac173a" name="Data" type="DateTime" label="Data : DateTime" kind="Persistent" fieldName="_data" />
+      <Property Id="5ab7c8b7-161c-40ce-97bc-14fec016e04f" name="NomeResponsavel" label="NomeResponsavel : String" kind="Persistent" fieldName="_nomeResponsavel" />
+      <Property Id="d1cae883-3ed0-40b1-8431-d16062c9bff3" name="NumDocResponsavel" label="NumDocResponsavel : String" kind="Persistent" fieldName="_numDocResponsavel" />
+      <Property Id="991e0bbe-5688-4b85-9627-0d25560c1346" name="TelefoneContato" label="TelefoneContato : String" kind="Persistent" fieldName="_telefoneContato" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="09f6cce2-9171-4106-ad87-80c87aa23c77">
+          <NavigationalProperty Id="5f00992c-08fa-4d04-b4cd-2d0781676613" name="Passageiros" type="IList&lt;Passageiro&gt;" label="Passageiros : IList&lt;Passageiro&gt;" nullable="true" kind="Persistent" fieldName="_passageiros" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="4bc24d06-4fd3-49f6-8ec1-84fec1b01652">
+      <domainContainer name="DewolfModel" namespace="Dewolf.Model" showPropertiesCompartment="true">
+        <entitySetProperty name="Viagems" namespace="Dewolf.Model" type="Viagem" label="Viagems : IQueryable&lt;Dewolf.Model.Viagem&gt;" />
+        <entitySetProperty name="Passagems" namespace="Dewolf.Model" type="Passagem" label="Passagems : IQueryable&lt;Dewolf.Model.Passagem&gt;" />
+        <entitySetProperty name="Passageiros" namespace="Dewolf.Model" type="Passageiro" label="Passageiros : IQueryable&lt;Dewolf.Model.Passageiro&gt;" />
+        <entitySetProperty name="Autorizacaos" namespace="Dewolf.Model" type="Autorizacao" label="Autorizacaos : IQueryable&lt;Dewolf.Model.Autorizacao&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

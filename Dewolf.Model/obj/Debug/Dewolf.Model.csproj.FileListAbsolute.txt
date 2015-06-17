@@ -1,0 +1,20 @@
+c:\users\victoralex\documents\visual studio 2013\Projects\DewolfViagens\Dewolf.Model\bin\Debug\Dewolf.Model.dll.config
+c:\users\victoralex\documents\visual studio 2013\Projects\DewolfViagens\Dewolf.Model\bin\Debug\Dewolf.Model.dll
+c:\users\victoralex\documents\visual studio 2013\Projects\DewolfViagens\Dewolf.Model\bin\Debug\Dewolf.Model.pdb
+c:\users\victoralex\documents\visual studio 2013\Projects\DewolfViagens\Dewolf.Model\bin\Debug\Telerik.OpenAccess.35.Extensions.dll
+c:\users\victoralex\documents\visual studio 2013\Projects\DewolfViagens\Dewolf.Model\bin\Debug\Telerik.OpenAccess.dll
+c:\users\victoralex\documents\visual studio 2013\Projects\DewolfViagens\Dewolf.Model\bin\Debug\Telerik.OpenAccess.xml
+c:\users\victoralex\documents\visual studio 2013\Projects\DewolfViagens\Dewolf.Model\bin\Debug\Telerik.OpenAccess.35.Extensions.xml
+c:\users\victoralex\documents\visual studio 2013\Projects\DewolfViagens\Dewolf.Model\obj\Debug\Dewolf.Model.csprojResolveAssemblyReference.cache
+c:\users\victoralex\documents\visual studio 2013\Projects\DewolfViagens\Dewolf.Model\obj\Debug\Dewolf.Model.dll
+c:\users\victoralex\documents\visual studio 2013\Projects\DewolfViagens\Dewolf.Model\obj\Debug\Dewolf.Model.pdb
+E:\DewolfViagens\Dewolf.Model\bin\Debug\Dewolf.Model.dll.config
+E:\DewolfViagens\Dewolf.Model\bin\Debug\Dewolf.Model.dll
+E:\DewolfViagens\Dewolf.Model\bin\Debug\Dewolf.Model.pdb
+E:\DewolfViagens\Dewolf.Model\bin\Debug\Telerik.OpenAccess.35.Extensions.dll
+E:\DewolfViagens\Dewolf.Model\bin\Debug\Telerik.OpenAccess.dll
+E:\DewolfViagens\Dewolf.Model\bin\Debug\Telerik.OpenAccess.xml
+E:\DewolfViagens\Dewolf.Model\bin\Debug\Telerik.OpenAccess.35.Extensions.xml
+E:\DewolfViagens\Dewolf.Model\obj\Debug\Dewolf.Model.csprojResolveAssemblyReference.cache
+E:\DewolfViagens\Dewolf.Model\obj\Debug\Dewolf.Model.dll
+E:\DewolfViagens\Dewolf.Model\obj\Debug\Dewolf.Model.pdb
